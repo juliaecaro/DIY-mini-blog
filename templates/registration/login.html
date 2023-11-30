@@ -1,0 +1,51 @@
+<!-- the login page -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+	<!-- if the password and username didn't match, this message will appear -->
+  {% if form.errors %}
+      <p class="centertext">Your username and password didn't match. Please try again.</p>
+  {% endif %}
+
+  {% if next %}
+    {% if user.is_authenticated %}
+      <!-- if a user isn't logged in with an account that has access, this message will appear -->
+      <p class="centertext">Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+    {% else %}
+      <!-- if a user isn't logged in at all, this message will appear -->
+      <p class="centertext">Please login to see this page.</p>
+    {% endif %}
+  {% endif %}
+
+	<!-- the login form -->
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <table>
+      <tr>
+				<!-- the username label -->
+        <td>{{ form.username.label_tag }}</td>
+				<!-- the username input box -->
+        <td>{{ form.username }}</td>
+      </tr>
+      <tr>
+				<!-- the password label -->
+        <td>{{ form.password.label_tag }}</td>
+				<!-- the password input box -->
+        <td>{{ form.password }}</td>
+      </tr>
+    </table>
+		<!-- putting the Login button in a div for easier css styling -->
+		<div class="button">
+    <input type="submit" value="Login">
+		</div>
+		<!-- the page should go to the next page upon signing in -->
+    <input type="hidden" name="next" value="{{ next }}">
+  </form>
+
+	<!-- a link that goes to the password reset page after being clicked -->
+  {# Assumes you setup the password_reset view in your URLconf #}
+  <p class="centertext"><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+{% endblock %}

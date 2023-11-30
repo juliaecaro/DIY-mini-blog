@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <!-- Accessible to all users from blog post lists. -->
+  <!-- Page contains the blog post: name, author, post date, and content. -->
+  <h1>{{ blog.name }}</h1>
+
+  <p class="post-info"><strong>Post date:</strong> {{ blog.post_date }} │ <strong>Author:</strong> <a href="{% url 'blogs-by-author' blog.author.pk %}">{{ blog.author }}</a></p>
+  <p><strong>Description:</strong></p>
+  <!-- Blog posts and comments need only display plain text. There is no need to support any sort of HTML markup (e.g. links, images, bold/italic, etc.). -->
+	<p>{{ blog.description }}</p>
+
+  <!-- Comments for the blog post should be displayed at bottom. -->
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Comments</h4>
+
+    {% for comment in blog.blogcomment_set.all %}
+      <hr>
+      <p>{{comment.author}} ({{comment.post_date}}) - {{comment.description}}</p>
+		{% endfor %}
+			<hr>
+      {% if user.is_authenticated %}
+				<!-- Contains link to add comments at end for logged in users (see Comment form page) -->
+				<!-- Accessible to logged-in users (only) from link at bottom of blog post detail pages. -->
+				<!-- Users cannot edit or delete their posts. -->
+				<!-- After a comment has been posted, the page will redirect back to the associated blog post page. -->
+				<a href="{% url 'blog_comment' blog.id %}">Add a new comment</a></p>
+			{% else %}
+				<!-- Logged out users will be directed to the login page to log in, before they can add comments. After logging in, they will be redirected back to the blog page they wanted to comment on. -->
+				<p><a href="{% url 'login'%}?next={{request.path}}">Login</a> to add a new comment</p>
+      {% endif %}
+  </div>
+{% endblock %}

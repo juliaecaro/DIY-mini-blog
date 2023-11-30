@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <!-- Accessible to all users from author links in blog posts etc. -->
+  <h1>Blogger: {{ blogger }}</h1>
+
+  <!-- Contains some biographical information about the blogger/author. -->
+  <h3>Bio</h3>
+	<p>{{ blogger.bio }}</p>
+
+	{% if blog_list %}
+	<h3>Blogger's Blogs List</h3>
+	<ul>
+		{% for blog in blog_list %}
+		<li>
+			<!-- List items display just the blog post name and post date. -->
+			<!-- Blog post names are linked to blog detail pages. -->
+			<a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a> ({{blog.post_date}})</a>
+		</li>
+		{% endfor %}
+	</ul>
+
+	{% else %}
+		<p>This blogger hasn't posted any posts yet.</p>
+	{% endif%}
+{% endblock %}

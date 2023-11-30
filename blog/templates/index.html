@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>DIY Blog Home</h1>
+	<!-- Created various class names for individual elements for easier specific css styling -->
+  <p class="home-text">
+    Welcome to the DIY Blog, a website developed by
+    <em>Mozilla Developer Network!</em>
+  </p>
+  <h2 class="home-h2">Dynamic Content</h2>
+  <p class="home-text">The blog site has the following record counts:</p>
+	<div class="list">
+		<ul class="home-list">
+	    <li><strong>Blog authors:</strong> {{ num_authors }}</li>
+	    <li><strong>Blog posts:</strong> {{ num_blogs }}</li>
+			<li><strong>Blog post comments:</strong> {{ num_comments }}</li>
+	  </ul>
+	</div>
+
+	<p class="home-text">You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+{% endblock %}

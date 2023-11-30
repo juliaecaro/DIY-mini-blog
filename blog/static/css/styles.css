@@ -1,0 +1,263 @@
+/* Custom CSS */
+
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* adjustments for the overall pages */
+body {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: 'Bitter', serif;
+	font-size: 19px;
+}
+
+/* main title */
+h1 {
+	color: #003049;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	text-transform: none;
+	font-size: 38px;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+}
+
+/* secondary title */
+h2 {
+	color: #003049;
+	margin-bottom: 5px;
+	font-size: 32px;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+}
+
+/* adjustments for the secondary title on the home page */
+.home-h2 {
+	margin-top: 7px;
+}
+
+/* tertiary title */
+h3 {
+	color: #003049;
+	margin-bottom: 5px;
+	font-size: 27px;
+	text-align: left;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+}
+
+/* fourth title */
+h4 {
+	color: #003049;
+	margin-bottom: 5px;
+	font-size: 22px;
+	text-align: left;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+}
+
+/* adjustments for the paragraphs */
+p {
+	text-align: justify;
+	margin-top: -5px;
+}
+
+/* adjustments for the paragraphs for the blog detail pages */
+p.post-info {
+	text-align: center;
+}
+
+/* adjustments for the paragraphs on the comment form */
+p.form-text {
+	margin-bottom: 5px;
+	font-size: 19px;
+	text-align: center;
+	color: #000000;
+	font-family: 'Bitter', serif;
+}
+
+/* the form table */
+td {
+	display: block;
+}
+
+/* the form table's span */
+td span {
+	font-size: 19px;
+	color: #000000;
+	font-family: 'Bitter', serif;
+}
+
+/* the form's table itself */
+table {
+	padding-bottom: 20px;
+	text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* the columns on the form's table */
+th {
+	display: block;
+}
+
+/* any buttons */
+.button {
+	text-align: center;
+	padding-top: 10px;
+}
+
+/* text that should be specifically centered */
+.centertext {
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+/* adjustments for strong text */
+strong {
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	color: #003049;
+}
+
+/* adjustments for labels */
+label {
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	color: #003049;
+	text-align: center;
+}
+
+/* unordered lists */
+ul {
+	margin-top: 0px;
+	margin-bottom: 10px;
+  display: inline-block;
+  text-align: left;
+}
+
+/* the col-sm-10 section */
+.col-sm-10 {
+  display: inline-block;
+	width: 100%;
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-top: 25px;
+}
+
+/* the col-sm-2 section */
+.col-sm-2 {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 70px;
+}
+
+/* the entire sidebar nav */
+.sidebar-nav {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 100%;
+	height: 84px;
+	background-color: #003049;
+	color: #FFFFFF;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	font-size: 32px;
+}
+
+/* the sidebar nav's li elements in the unordered list */
+ul.sidebar-nav li {
+  list-style-type: none;
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	font-size: 32px;
+	padding-left: 0px;
+}
+
+/* the sidebar nav's li elements in the unordered list that should be pushed to the right of the sidebar nav unordered list */
+ul.sidebar-nav li.nav-right, ul.sidebar-nav li.nav-right-user {
+	float: right;
+	text-transform: uppercase;
+	padding-left: 0px;
+}
+
+/* specifically the user's profile name in the unordered list, which should be also pushed to the right of the sidebar nav's unordered list */
+ul.sidebar-nav li.nav-right-user {
+  padding: 18px 16px;
+}
+
+/* links in the sidebar nav unordered list */
+ul.sidebar-nav a {
+	display: block;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	text-decoration: none;
+  padding: 18px 16px;
+	font-size: 32px;
+}
+
+/* how the links in the sidebar nav unordered list are to look when they are hovered over with the cursor */
+ul.sidebar-nav a:hover {
+	color: #003049;
+	background-color: #FFFFFF;
+}
+
+/* adjustments for any list divs */
+div.list {
+	text-align: center;
+}
+
+/* any lists that aren't in the sidebar nav should have these adjustments */
+li {
+  list-style-type: "➤";
+  padding-inline-start: 0.26ch;
+}
+
+/* adjustments for the markers for any lists that aren't in the sidebar nav */
+li::marker {
+	color: #003049;
+}
+
+/* adjustments for the text specifically on the home page */
+.home-text {
+	text-align: center;
+	margin-top: -5px;
+	margin-bottom: 0px;
+}
+
+/* adjustments for the list specifically on the home page */
+.home-list {
+	margin-top: 5px;
+}
+
+/* any links on any page that isn't in the sidebar-nav */
+.page-links {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: -5px;
+}
+
+/* any links that aren't in the sidebar-nav should have these adjustments */
+a {
+	font-family: 'Lato', sans-serif;
+	color: #003049;
+	text-decoration: none;
+	font-size: 19px;
+	font-weight: bold;
+}
+
+/* any links that aren't in the sidebar-nav should look like this when hovered over with the cursor */ 
+a:hover {
+	color: #939799;
+}

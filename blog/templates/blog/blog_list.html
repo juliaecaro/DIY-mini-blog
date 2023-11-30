@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <!-- Accessible to all users from a sidebar link. -->
+  <h1>All Blogs</h1>
+  {% if blog_list %}
+		<div class="list">
+	    <ul>
+	      {% for blog in blog_list %}
+	      <li>
+	        <!-- List items display the blog title, post date, and author. -->
+	        <!-- Blog post names are linked to blog detail pages. -->
+	        <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a>
+	        <!-- Blogger (author names) are linked to blog author detail pages. -->
+	        ({{blog.post_date}}) - <a href="{% url 'blogs-by-author' blog.author.pk %}">{{ blog.author }}</a>
+	      </li>
+	      {% endfor %}
+	    </ul>
+		</div>
+  {% else %}
+    <p>No blog posts have been posted yet.</p>
+  {% endif %}
+{% endblock %}

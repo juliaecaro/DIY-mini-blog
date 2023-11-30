@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content%}
+<!-- Comment pages should include the name/link to the blog post being commented on. -->
+<p class="form-text">Post your comment for: <a href="{% url 'blog-detail' blog.pk %}">{{blog.name}}</a></p>
+
+<!-- Displays form with description for entering comments (post date and blog is not editable). -->
+<form action="" method="post">
+  {% csrf_token %}
+	<table>
+		{{ form.as_table }}
+	</table>
+	<!-- Putting the Submit button into its own div for easier css styling -->
+	<div class="button">
+		<input type="submit" value="Submit"/>
+	</div>
+</form>
+{% endblock %}
